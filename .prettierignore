@@ -1,0 +1,9 @@
+apps/web/dist
+.worktrees
+.superpowers
+.pnpm-store
+node_modules
+playwright-report
+pnpm-lock.yaml
+test-results
+target

@@ -1,0 +1,22 @@
+[project]
+name = "diagnostics-edge-service"
+version = "0.0.0"
+requires-python = ">=3.9"
+
+[project.scripts]
+edge-service = "edge_service.main:main"
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.14,<2",
+  "pytest>=8.3,<9",
+  "ruff>=0.9,<1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.mypy]
+files = ["src"]
+strict = true

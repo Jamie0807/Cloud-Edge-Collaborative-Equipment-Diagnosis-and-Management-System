@@ -1,0 +1,10 @@
+{
+  "name": "@diagnostics/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/identifiers.js",
+  "scripts": {
+    "test": "cd ../.. && vitest run packages/contracts/test"
+  }
+}

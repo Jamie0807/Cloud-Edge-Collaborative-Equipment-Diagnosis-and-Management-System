@@ -1,0 +1,2 @@
+pnpm exec prettier --check .
+pnpm exec eslint apps/web packages --max-warnings=0
