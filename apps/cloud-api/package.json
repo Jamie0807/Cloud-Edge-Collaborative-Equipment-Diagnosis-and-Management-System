@@ -1,0 +1,12 @@
+{
+  "name": "@diagnostics/cloud-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "mvn -q -DskipTests compile",
+    "format:check": "mvn -q spotless:check",
+    "typecheck": "mvn -q -DskipTests compile",
+    "test": "mvn -q test",
+    "build": "mvn -q -DskipTests package"
+  }
+}

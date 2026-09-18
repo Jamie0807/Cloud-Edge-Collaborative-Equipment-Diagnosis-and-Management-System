@@ -1,0 +1,1 @@
+"""Minimal terminal-simulator package."""

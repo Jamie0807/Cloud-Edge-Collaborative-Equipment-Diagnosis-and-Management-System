@@ -1,0 +1,39 @@
+{
+  "name": "cloud-edge-diagnostics",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "lint": "pnpm exec eslint . --max-warnings=0 && pnpm --dir apps/edge-service run lint && pnpm --dir apps/terminal-simulator run lint && pnpm --dir apps/cloud-api run lint",
+    "format:check": "pnpm exec prettier --check . && pnpm --dir apps/edge-service run format:check && pnpm --dir apps/terminal-simulator run format:check && pnpm --dir apps/cloud-api run format:check",
+    "spellcheck": "pnpm exec cspell .",
+    "typecheck": "pnpm --dir apps/web run typecheck && pnpm --dir apps/edge-service run typecheck && pnpm --dir apps/terminal-simulator run typecheck && pnpm --dir apps/cloud-api run typecheck",
+    "test": "pnpm --dir apps/web run test && pnpm --dir packages/contracts run test && pnpm --dir packages/test-fixtures run test && pnpm --dir apps/edge-service run test && pnpm --dir apps/terminal-simulator run test && pnpm --dir apps/cloud-api run test",
+    "test:e2e": "pnpm --dir apps/web run test:e2e",
+    "build": "pnpm --dir apps/web run build && pnpm --dir apps/edge-service run build && pnpm --dir apps/terminal-simulator run build && pnpm --dir apps/cloud-api run build",
+    "validate": "pnpm lint && pnpm format:check && pnpm spellcheck && pnpm typecheck && pnpm test && pnpm test:e2e && pnpm build",
+    "commit": "pnpm exec cz",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cz-commitlint": "^19.8.1",
+    "@eslint/js": "^9.21.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "cspell": "^8.17.5",
+    "commitizen": "^4.3.1",
+    "eslint": "^9.21.0",
+    "eslint-plugin-vue": "^10.0.0",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "inquirer": "^9.3.7",
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.25.0",
+    "vue": "^3.5.13",
+    "vue-eslint-parser": "^10.3.0",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.8"
+  }
+}

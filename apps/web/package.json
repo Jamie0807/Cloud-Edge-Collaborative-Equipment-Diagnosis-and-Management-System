@@ -1,0 +1,31 @@
+{
+  "name": "@diagnostics/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src e2e --max-warnings=0",
+    "format:check": "prettier --check src e2e index.html",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/vue": "^8.1.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "jsdom": "^26.0.0",
+    "type-fest": "^2.19.0",
+    "typescript": "~5.7.3",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.8",
+    "vue-tsc": "^2.2.8"
+  }
+}
