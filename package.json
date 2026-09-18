@@ -12,7 +12,8 @@
     "test": "pnpm --dir apps/web run test && pnpm --dir packages/contracts run test && pnpm --dir packages/test-fixtures run test && pnpm --dir apps/edge-service run test && pnpm --dir apps/terminal-simulator run test && pnpm --dir apps/cloud-api run test",
     "test:e2e": "pnpm --dir apps/web run test:e2e",
     "build": "pnpm --dir apps/web run build && pnpm --dir apps/edge-service run build && pnpm --dir apps/terminal-simulator run build && pnpm --dir apps/cloud-api run build",
-    "validate": "pnpm lint && pnpm format:check && pnpm spellcheck && pnpm typecheck && pnpm test && pnpm test:e2e && pnpm build",
+    "commitlint": "pnpm exec commitlint --last",
+    "validate": "pnpm commitlint && pnpm lint && pnpm format:check && pnpm spellcheck && pnpm typecheck && pnpm test && pnpm test:e2e && pnpm build",
     "commit": "pnpm exec cz",
     "prepare": "husky"
   },
