@@ -109,7 +109,11 @@ importers:
         specifier: ^2.2.8
         version: 2.2.12(typescript@5.7.3)
 
-  packages/contracts: {}
+  packages/contracts:
+    devDependencies:
+      typescript:
+        specifier: ~5.7.3
+        version: 5.7.3
 
   packages/test-fixtures: {}
 

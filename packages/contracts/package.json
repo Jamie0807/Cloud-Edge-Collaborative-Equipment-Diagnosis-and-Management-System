@@ -1,10 +1,14 @@
 {
   "name": "@diagnostics/contracts",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "exports": "./src/identifiers.js",
+  "exports": "./src/identifiers.ts",
   "scripts": {
-    "test": "cd ../.. && vitest run packages/contracts/test"
+    "test": "cd ../.. && vitest run --config packages/contracts/vitest.config.ts packages/contracts/test",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.3"
   }
 }
