@@ -1,4 +1,4 @@
-"""Executable health-only entry point for the edge service skeleton."""
+"""边端服务的健康检查入口。"""
 
 import json
 

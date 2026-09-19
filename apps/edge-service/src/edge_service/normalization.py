@@ -1,4 +1,4 @@
-"""Metadata normalization for the edge-service boundary."""
+"""边端接入边界的元数据标准化。"""
 
 from collections.abc import Mapping
 
@@ -6,11 +6,11 @@ REQUIRED_IDENTIFIERS = ("assetId", "terminalId", "edgeId", "eventId")
 
 
 def normalize_metadata(metadata: Mapping[str, object]) -> dict[str, str]:
-    """Return required identifiers without conflating their individual meanings."""
+    """保留四个独立标识，不混淆各自业务语义。"""
     normalized: dict[str, str] = {}
     for identifier in REQUIRED_IDENTIFIERS:
         value = metadata.get(identifier)
         if not isinstance(value, str) or not value:
-            raise ValueError(f"{identifier} is required")
+            raise ValueError(f"{identifier} 字段必填")
         normalized[identifier] = value
     return normalized
