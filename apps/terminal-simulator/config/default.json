@@ -1,0 +1,34 @@
+{
+  "terminals": [
+    {
+      "terminalId": "terminal-infrared-001",
+      "assetId": "asset-transformer-001",
+      "edgeId": "edge-site-a-001",
+      "site": "site-a",
+      "modality": "infrared",
+      "collectionIntervalSeconds": 5,
+      "heartbeatIntervalSeconds": 10,
+      "edgeUrl": "http://edge.local:8000"
+    },
+    {
+      "terminalId": "terminal-acoustic-001",
+      "assetId": "asset-transformer-002",
+      "edgeId": "edge-site-a-001",
+      "site": "site-a",
+      "modality": "acoustic",
+      "collectionIntervalSeconds": 20,
+      "heartbeatIntervalSeconds": 10,
+      "edgeUrl": "http://edge.local:8000"
+    },
+    {
+      "terminalId": "terminal-partial-discharge-001",
+      "assetId": "asset-transformer-003",
+      "edgeId": "edge-site-a-001",
+      "site": "site-a",
+      "modality": "partial_discharge",
+      "collectionIntervalSeconds": 60,
+      "heartbeatIntervalSeconds": 10,
+      "edgeUrl": "http://edge.local:8000"
+    }
+  ]
+}
