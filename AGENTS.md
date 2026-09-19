@@ -34,6 +34,12 @@
 
 目标目录职责固定：`apps/web` 为 Vue 3 管理端，`apps/cloud-api` 为 Spring Boot 云端 API，`apps/edge-service` 为 Python 边端，`apps/terminal-simulator` 为 Python 终端模拟器，`packages/contracts` 为跨服务契约，`packages/test-fixtures` 为共享测试数据。前端不得直连数据库；终端不得直连云端；服务不得绕过边端链路或跨服务直接读库。只修改任务写集，不顺手重排无关文件、升级依赖或扩大业务范围。
 
+## TypeScript 与中文产物规范
+
+- Node.js 工作区的业务源码、共享包源码和测试源码统一使用 TypeScript（`.ts`、`.tsx` 或 Vue 单文件组件中的 `<script lang="ts">`）；不得新增 `.js`、`.mjs`、`.cjs` 业务模块或测试模块。现有 JavaScript 文件在被业务任务触及时应优先迁移为 TypeScript，并同步迁移引用、测试和导出；纯工具配置若工具明确要求 JavaScript 扩展名，可保留，但必须保持最小范围并在任务报告中说明。
+- 新增或实质修改的项目文档、README、ADR、Spec Kit 产物、任务报告、代码注释、测试描述、错误提示和 Web 用户界面文案默认使用中文。协议字段、API 路径、环境变量、命令、代码标识符、标准名称、库名和外部工具原名按兼容性要求保留英文；不得为了中文化破坏跨服务契约或可执行命令。
+- AI 生成内容必须在提交前检查语言一致性；发现无必要的英文段落、英文占位文案或英文测试描述时，先翻译为中文再交付。已有英文文件不在本规则落地时批量重写，后续任务修改该文件时按本规则渐进迁移，并在追踪报告中记录未迁移部分。
+
 ## 质量命令
 
 `pnpm validate` 是唯一全量质量入口，必须编排并在任一子命令失败时失败退出。可单独运行的门禁包括：`pnpm lint`、`pnpm format:check`、`pnpm spellcheck`、`pnpm typecheck`、`pnpm test`、`pnpm test:e2e`、`pnpm build`。质量检查还必须覆盖 Vitest、Playwright、JUnit、pytest、cspell 及必要的健康检查；CI 在 push 和 PR 上使用锁文件安装依赖并保留必要诊断产物。提交前不得声称通过未实际运行的命令。
