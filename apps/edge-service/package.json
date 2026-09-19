@@ -7,6 +7,6 @@
     "format:check": "python3 -m ruff format --check src tests",
     "typecheck": "python3 -m mypy src",
     "test": "python3 -m pytest",
-    "build": "PYTHONPYCACHEPREFIX=${TMPDIR:-/tmp}/diagnostics-pycache python3 -m py_compile src/edge_service/main.py"
+    "build": "PYTHONPYCACHEPREFIX=${TMPDIR:-/tmp}/diagnostics-pycache python3 -m compileall -q src"
   }
 }
